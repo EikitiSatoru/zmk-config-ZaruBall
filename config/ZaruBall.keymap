@@ -172,6 +172,46 @@
                 <&macro_release>,
                 <&mo SCROLL>;
         };
+
+        gui_down_arrow: gui_down_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp DOWN &kt LEFT_GUI>;
+            label = "GUI_DOWN_ARROW";
+            wait-ms = <100>;
+        };
+
+        gui_up_arrow: gui_up_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp UP_ARROW &kt LEFT_GUI>;
+            label = "GUI_UP_ARROW";
+            wait-ms = <100>;
+        };
+
+        gui_left_arrow: gui_left_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp LEFT &kt LEFT_GUI>;
+            label = "GUI_LEFT_ARROW";
+            wait-ms = <100>;
+        };
+
+        gui_right_arrow: gui_right_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp RIGHT &kt LEFT_GUI>;
+            label = "GUI_RIGHT_ARROW";
+        };
+
+        gui_tab: gui_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp TAB &kt LEFT_GUI>;
+            label = "GUI_TAB";
+            wait-ms = <100>;
+        };
+
     };
 };
 
