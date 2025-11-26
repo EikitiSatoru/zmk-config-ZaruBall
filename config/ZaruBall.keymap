@@ -75,34 +75,6 @@
             tapping-term-ms = <200>;
             bindings = <&mt RCTL LANG1>, <&mo RAISE>, <&mo 5>;
         };
-
-        bs_adjustlayer_bs: bs_adjustlayer_bs {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BS_ADJUSTLAYER_BS";
-            #binding-cells = <0>;
-            bindings = <&lt 3 BACKSPACE>, <&kp BACKSPACE>;
-        };
-
-        left_layer1_left: left_layer1_left {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LEFT_LAYER1_LEFT";
-            #binding-cells = <0>;
-            bindings = <&lt 1 LEFT_ARROW>, <&kp LEFT_ARROW>;
-        };
-
-        right_layer2_right: right_layer2_right {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RIGHT_LAYER2_RIGHT";
-            #binding-cells = <0>;
-            bindings = <&lt 2 RIGHT>, <&kp RIGHT>;
-        };
-
-        zero_ctrl_zero: zero_ctrl_zero {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ZERO_CTRL_ZERO";
-            #binding-cells = <0>;
-            bindings = <&mt RCTRL KP_NUMBER_0>, <&kp KP_NUMBER_0>;
-        };
     };
 };
 
@@ -197,11 +169,11 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp N5                         &kp NUMBER_6       &kp N7               &kp N8  &kp N9     &kp N0   &bs_adjustlayer_bs
-&kp ESCAPE        &kp Q         &kp W         &kp E         &kp R             &kp T                          &kp Y              &kp U                &kp I   &kp O      &kp P    &kp MINUS
-&kp TAB           &kp A         &kp S         &kp D         &kp F             &kp G        &gui_tab          &out OUT_TOG       &kp H                &kp J   &kp K      &kp L    &mt LEFT_SHIFT APOS  &kp ENTER
-&kp LSHFT         &kp Z         &kp X         &kp C         &kp V             &kp B        &kp BACKSPACE     &kp DELETE         &kp N                &kp M   &kp COMMA  &kp DOT  &kp FSLH             &kp LEFT_SHIFT
-&kp LEFT_CONTROL                &kp LEFT_GUI  &kp LEFT_ALT  &lt 1 LANGUAGE_2  &lt 2 SPACE  &lt 5 LANGUAGE_1  &left_layer1_left  &right_layer2_right                              &kp RIGHT_CONTROL
+&kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp N5                         &kp NUMBER_6  &kp N7  &kp N8  &kp N9     &kp N0   &none
+&kp ESCAPE        &kp Q         &kp W         &kp E         &kp R             &kp T                          &kp Y         &kp U   &kp I   &kp O      &kp P    &kp MINUS
+&kp TAB           &kp A         &kp S         &kp D         &kp F             &kp G        &gui_tab          &out OUT_TOG  &kp H   &kp J   &kp K      &kp L    &mt LEFT_SHIFT APOS  &kp ENTER
+&kp LSHFT         &kp Z         &kp X         &kp C         &kp V             &kp B        &kp BACKSPACE     &kp DELETE    &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH             &kp LEFT_SHIFT
+&kp LEFT_CONTROL                &kp LEFT_GUI  &kp LEFT_ALT  &lt 1 LANGUAGE_2  &lt 2 SPACE  &lt 5 LANGUAGE_1  &none         &none                               &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -225,7 +197,7 @@
             bindings = <
 &none       &none  &none           &kp PAGE_UP     &none             &kp LA(F5)                          &kp KP_NUMLOCK   &kp N7             &kp N8        &kp N9        &kp KP_MINUS  &kp BACKSPACE
 &trans      &none  &kp LEFT_SHIFT  &kp UP_ARROW    &kp LEFT_CONTROL  &kp LC(LS(HOME))                    &kp DELETE       &kp NUMBER_4       &kp N5        &kp NUMBER_6  &kp KP_PLUS   &none
-&trans      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp LS(LC(END))   &none             &kp TAB          &kp LS(SEMICOLON)  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LEFT_SHIFT    &kp ENTER
+&trans      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp LS(LC(END))   &none             &kp TAB          &kp DOUBLE_QUOTES  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LEFT_SHIFT    &kp ENTER
 &trans      &none  &none           &kp PAGE_DOWN   &kp LG(C)         &none             &gui_down_arrow   &gui_up_arrow    &kp SLASH          &kp NUMBER_0  &kp COMMA     &kp DOT       &kp LEFT_CONTROL  &none
 &kp LG(F4)         &kp LG(D)       &lt 2 LG(HOME)  &trans            &lt 2 SPACE       &lt 2 LANGUAGE_1  &gui_left_arrow  &gui_right_arrow                                             &kp RCTRL
             >;
