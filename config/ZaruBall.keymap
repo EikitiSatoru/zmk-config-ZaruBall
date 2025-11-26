@@ -212,8 +212,8 @@
             bindings = <
 &trans          &kp F1            &kp F2            &kp F3            &kp F4            &kp F5                                &kp F6            &kp F7             &kp F8         &kp F9             &kp F10               &kp PLUS
 &none           &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                            &kp LS(NUMBER_6)  &kp LS(N8)         &kp LS(N7)     &kp LS(N9)         &kp LEFT_BRACKET      &kp INT_YEN
-&kp LC(TAB)     &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4      &kp N5            &kp PAGE_DOWN       &kp PAGE_UP       &kp NUMBER_6       &kp N7         &kp N8             &kp N9                &zero_ctrl_zero    &mt LEFT_SHIFT SEMI
-&kp LEFT_SHIFT  &kp LC(Z)         &kp LC(X)         &kp LC(C)         &kp LC(V)         &kp LG(V)         &kp DOWN            &kp UP_ARROW      &kp RIGHT_BRACKET  &kp BACKSLASH  &kp LS(LESS_THAN)  &kp LS(GREATER_THAN)  &kp LS(INT_RO)     &mt LEFT_SHIFT INTERNATIONAL_1
+&kp LC(TAB)     &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4      &kp N5            &kp PAGE_DOWN       &kp PAGE_UP       &kp NUMBER_6       &kp N7         &kp N8             &kp N9                &mt LEFT_CONTROL N0  &mt LEFT_SHIFT SEMI
+&kp LEFT_SHIFT  &kp LC(Z)         &kp LC(X)         &kp LC(C)         &kp LC(V)         &kp LG(V)         &kp DOWN            &kp UP_ARROW      &kp RIGHT_BRACKET  &kp BACKSLASH  &kp LS(LESS_THAN)  &kp LS(GREATER_THAN)  &kp LS(INT_RO)       &mt LEFT_SHIFT INTERNATIONAL_1
 &kp LC(LG(F4))                    &kp LC(LG(D))     &kp LG(TAB)       &trans            &lt 1 INT_HENKAN  &lt 1 INT_MUHENKAN  &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))                                                          &kp RIGHT_CONTROL
             >;
 
@@ -223,11 +223,11 @@
         raise_layer {
             display-name = "Raise";
             bindings = <
-&none       &none  &none           &kp LA(PAGE_UP)  &none             &kp LA(F5)                          &kp KP_NUMLOCK   &kp N7            &kp N8        &kp N9        &kp KP_MINUS  &kp BACKSPACE
-&trans      &none  &kp LEFT_SHIFT  &kp UP_ARROW     &kp LEFT_CONTROL  &kp LC(LS(HOME))                    &kp DELETE       &kp NUMBER_4      &kp N5        &kp NUMBER_6  &kp KP_PLUS   &none
-&trans      &none  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW   &kp LS(LC(END))   &none             &kp TAB          &kp ASTERISK      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LEFT_SHIFT    &kp ENTER
-&trans      &none  &none           &kp PAGE_DOWN    &kp LG(C)         &none             &gui_down_arrow   &gui_up_arrow    &kp SLASH         &kp NUMBER_0  &kp COMMA     &kp DOT       &kp LEFT_CONTROL  &none
-&kp LG(F4)         &kp LG(D)       &lt 2 LG(HOME)   &trans            &lt 2 SPACE       &lt 2 LANGUAGE_1  &gui_left_arrow  &gui_right_arrow                                            &kp RCTRL
+&none       &none  &none           &kp PAGE_UP     &none             &kp LA(F5)                          &kp KP_NUMLOCK   &kp N7             &kp N8        &kp N9        &kp KP_MINUS  &kp BACKSPACE
+&trans      &none  &kp LEFT_SHIFT  &kp UP_ARROW    &kp LEFT_CONTROL  &kp LC(LS(HOME))                    &kp DELETE       &kp NUMBER_4       &kp N5        &kp NUMBER_6  &kp KP_PLUS   &none
+&trans      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp LS(LC(END))   &none             &kp TAB          &kp LS(SEMICOLON)  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LEFT_SHIFT    &kp ENTER
+&trans      &none  &none           &kp PAGE_DOWN   &kp LG(C)         &none             &gui_down_arrow   &gui_up_arrow    &kp SLASH          &kp NUMBER_0  &kp COMMA     &kp DOT       &kp LEFT_CONTROL  &none
+&kp LG(F4)         &kp LG(D)       &lt 2 LG(HOME)  &trans            &lt 2 SPACE       &lt 2 LANGUAGE_1  &gui_left_arrow  &gui_right_arrow                                             &kp RCTRL
             >;
 
             sensor-bindings = <&scroll_down_up>;
