@@ -32,7 +32,6 @@
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
-
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
@@ -277,7 +276,7 @@
             bindings = <
 &to_layer_0 GRAVE         &to_layer_0 N1  &to_layer_0 N2        &to_layer_0 N3        &to_layer_0 N4    &to_layer_0 N5                         &to_layer_0 N6      &to_layer_0 N7  &to_layer_0 N8  &to_layer_0 N9     &to_layer_0 N0      &to_layer_0 BACKSPACE
 &to_layer_0 ESCAPE        &to_layer_0 Q   &to_layer_0 W         &to_layer_0 E         &to_layer_0 R     &to_layer_0 T                          &to_layer_0 Y       &to_layer_0 U   &mkp MCLK       &to_layer_0 O      &to_layer_0 P       &to_layer_0 MINUS
-&to_layer_0 TAB           &to_layer_0 A   &to_layer_0 S         &to_layer_0 D         &to_layer_0 F     &to_layer_0 G   &msc SCRL_LEFT         &msc SCRL_LEFT      &to_layer_0 H   &mkp LCLK       &mkp RCLK          &mkp RCLK           &to_scroll_layer       &to_layer_0 ENTER
+&to_layer_0 TAB           &to_layer_0 A   &to_layer_0 S         &to_layer_0 D         &to_layer_0 F     &to_layer_0 G   &msc SCRL_LEFT         &msc SCRL_LEFT      &to_layer_0 H   &mkp LCLK       &mkp RCLK          &mkp RCLK           &lt 5 SCROLLLOCK       &to_layer_0 ENTER
 &to_layer_0 LSHIFT        &to_layer_0 Z   &to_layer_0 X         &to_layer_0 C         &to_layer_0 V     &to_layer_0 B   &to_layer_0 BACKSPACE  &to_layer_0 DELETE  &to_layer_0 N   &to_layer_0 M   &to_layer_0 COMMA  &to_layer_0 PERIOD  &to_layer_0 SLASH      &to_layer_0 LEFT_SHIFT
 &to_layer_0 LEFT_CONTROL                  &to_layer_0 LEFT_GUI  &to_layer_0 LEFT_ALT  &lt 1 LANGUAGE_2  &lt 1 SPACE     &lt 1 LANGUAGE_1       &lt 3 LEFT          &lt 2 RIGHT                                                            &kp LEFT_CONTROL
             >;
