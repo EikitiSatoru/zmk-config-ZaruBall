@@ -78,28 +78,28 @@
 
         td2: bs_layer3_bs {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD3";
+            label = "bs_layer3_bs";
             #binding-cells = <0>;
             bindings = <&lt 3 BACKSPACE>, <&kp BACKSPACE>;
         };
 
         td3: left_layer1_left {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD3";
+            label = "left_layer1_left";
             #binding-cells = <0>;
             bindings = <&lt 1 LEFT>, <&kp LEFT>;
         };
 
         td4: right_layer2_right {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD4";
+            label = "right_layer2_right";
             #binding-cells = <0>;
             bindings = <&lt 2 RIGHT>, <&kp RIGHT>;
         };
 
         td5: zero_ctrl_zero {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD5";
+            label = "Tzero_ctrl_zero";
             #binding-cells = <0>;
             bindings = <&mt LEFT_CONTROL KP_NUMBER_0>, <&kt KP_NUMBER_0>;
         };
