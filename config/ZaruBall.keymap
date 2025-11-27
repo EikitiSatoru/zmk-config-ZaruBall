@@ -75,6 +75,34 @@
             tapping-term-ms = <200>;
             bindings = <&mt RCTL LANG1>, <&mo RAISE>, <&mo 5>;
         };
+
+        td2: bs_layer3_bs {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD3";
+            #binding-cells = <0>;
+            bindings = <&lt 3 BACKSPACE>, <&kp BACKSPACE>;
+        };
+
+        td3: left_layer1_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD3";
+            #binding-cells = <0>;
+            bindings = <&lt 1 LEFT>, <&kp LEFT>;
+        };
+
+        td4: right_layer2_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD4";
+            #binding-cells = <0>;
+            bindings = <&lt 2 RIGHT>, <&kp RIGHT>;
+        };
+
+        td5: zero_ctrl_zero {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD5";
+            #binding-cells = <0>;
+            bindings = <&mt LEFT_CONTROL KP_NUMBER_0>, <&kt KP_NUMBER_0>;
+        };
     };
 };
 
