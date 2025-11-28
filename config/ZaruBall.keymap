@@ -31,9 +31,7 @@
 
                         >;
 
-  
-    // --- ★ 切り分けのため一旦コメントアウト ---
-    /*
+   
     scroller {
         layers = <SCROLL>;
         input-processors = <
@@ -41,7 +39,6 @@
             &zip_xy_to_scroll_mapper
         >;
     };
-    */
 };
 
 / {
