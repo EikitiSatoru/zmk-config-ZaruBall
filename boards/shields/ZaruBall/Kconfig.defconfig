@@ -1,52 +1,31 @@
-if SHIELD_ZARUBALL_RIGHT
-    # 右＝セントラル + トラックボール側
+if SHIELD_ZARUBALL_RIGHT #ここを変えてセントラル側に問題のコードを移行
 
-    config ZMK_KEYBOARD_NAME
-        default "ZaruBall"
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "ZaruBall"
 
-    config ZMK_SPLIT_ROLE_CENTRAL
-        default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 
-    # USB をセントラル側だけ有効にしたい場合
-    config ZMK_USB
-        default y
-
-    # セントラル専用のバッテリープロキシ
-    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
-        default y
-
-    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
-        default y
-
-    # トラックボール(PMW3610)を使うのでポインティング関係
-    config ZMK_POINTING
-        default y
-
-    config PMW3610
-        default y
-
-    config INPUT
-        default y
-
-    # SPI も右だけ ON
-    config SPI
-        default y
 endif
 
-
-if SHIELD_ZARUBALL_LEFT
-    # 左＝エンコーダだけ（トラックボールなし）
-
-    config EC11
-        default y
-
-    config EC11_TRIGGER_GLOBAL_THREAD
-        default y
-endif
-
-
-# 共通（左右どちらかなら分割キーボード）
 if SHIELD_ZARUBALL_LEFT || SHIELD_ZARUBALL_RIGHT
-    config ZMK_SPLIT
-        default y
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+# Input Device(pmw3610)のためのコンフィグ
+if SHIELD_ZARUBALL_RIGHT
+
+# Other settings
+
+config ZMK_POINTING
+    default y
+
+# Assuming pointing device uses SPI
+config SPI
+    default y
+
 endif
