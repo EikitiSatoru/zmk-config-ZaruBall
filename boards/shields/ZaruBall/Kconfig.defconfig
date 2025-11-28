@@ -1,31 +1,49 @@
-if SHIELD_ZARUBALL_RIGHT #ここを変えてセントラル側に問題のコードを移行
+# boards/shields/ZaruBall/Kconfig.defconfig
 
-# Name must be less than 16 characters long!
+# 右側：セントラル + トラックボール + USB + 中央バッテリー
+if SHIELD_ZARUBALL_RIGHT
+
 config ZMK_KEYBOARD_NAME
     default "ZaruBall"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-if SHIELD_ZARUBALL_LEFT || SHIELD_ZARUBALL_RIGHT
 
 config ZMK_SPLIT
     default y
 
-endif
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 
-# Input Device(pmw3610)のためのコンフィグ
-if SHIELD_ZARUBALL_RIGHT
-
-# Other settings
-
+# ---- ポインティングデバイス関係 ----
 config ZMK_POINTING
     default y
 
-# Assuming pointing device uses SPI
+config INPUT
+    default y
+
+config PMW3610
+    default y
+
 config SPI
     default y
 
-endif
+# ---- セントラル側 USB/BLE バッテリー関連（必要なら）----
+config ZMK_USB
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+    default y
+
+endif # SHIELD_ZARUBALL_RIGHT
+
+
+# 左側：ペリフェラル。分割キーボードであることだけ指定
+if SHIELD_ZARUBALL_LEFT
+
+config ZMK_SPLIT
+    default y
+
+# ポインタ関連・USB・中央バッテリー関連は一切ここには書かない
+
+endif # SHIELD_ZARUBALL_LEFT
