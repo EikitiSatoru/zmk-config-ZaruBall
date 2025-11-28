@@ -14,13 +14,3 @@
 &left_encoder {
     status = "okay";
 };
-
-/* ★左側ではトラックボールを無効化 */
-&trackball {
-    status = "disabled";
-};
-
-/* 念のため、リスナーも左では無効に固定しておく（もともと disabled だけど上書き） */
-&trackball_listener {
-    status = "disabled";
-};
