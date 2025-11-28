@@ -1,49 +1,52 @@
-# boards/shields/ZaruBall/Kconfig.defconfig
-
-# 右側：セントラル + トラックボール + USB + 中央バッテリー
 if SHIELD_ZARUBALL_RIGHT
+    # 右＝セントラル + トラックボール側
 
-config ZMK_KEYBOARD_NAME
-    default "ZaruBall"
+    config ZMK_KEYBOARD_NAME
+        default "ZaruBall"
 
-config ZMK_SPLIT
-    default y
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+    # USB をセントラル側だけ有効にしたい場合
+    config ZMK_USB
+        default y
 
-# ---- ポインティングデバイス関係 ----
-config ZMK_POINTING
-    default y
+    # セントラル専用のバッテリープロキシ
+    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+        default y
 
-config INPUT
-    default y
+    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+        default y
 
-config PMW3610
-    default y
+    # トラックボール(PMW3610)を使うのでポインティング関係
+    config ZMK_POINTING
+        default y
 
-config SPI
-    default y
+    config PMW3610
+        default y
 
-# ---- セントラル側 USB/BLE バッテリー関連（必要なら）----
-config ZMK_USB
-    default y
+    config INPUT
+        default y
 
-config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
-    default y
-
-config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
-    default y
-
-endif # SHIELD_ZARUBALL_RIGHT
+    # SPI も右だけ ON
+    config SPI
+        default y
+endif
 
 
-# 左側：ペリフェラル。分割キーボードであることだけ指定
 if SHIELD_ZARUBALL_LEFT
+    # 左＝エンコーダだけ（トラックボールなし）
 
-config ZMK_SPLIT
-    default y
+    config EC11
+        default y
 
-# ポインタ関連・USB・中央バッテリー関連は一切ここには書かない
+    config EC11_TRIGGER_GLOBAL_THREAD
+        default y
+endif
 
-endif # SHIELD_ZARUBALL_LEFT
+
+# 共通（左右どちらかなら分割キーボード）
+if SHIELD_ZARUBALL_LEFT || SHIELD_ZARUBALL_RIGHT
+    config ZMK_SPLIT
+        default y
+endif
