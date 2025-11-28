@@ -31,7 +31,7 @@
 
                         >;
 
-    scroller {
+   # scroller {
         layers = <SCROLL>;
         input-processors = <
                             // スクロールの向きの変更
@@ -39,7 +39,7 @@
                             &zip_xy_scaler 1 20 // スクロールの感度(default: x20)
                             &zip_xy_to_scroll_mapper
                             >;
-    };
+ #   };
 };
 
 / {
