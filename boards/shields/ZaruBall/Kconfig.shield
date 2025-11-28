@@ -1,44 +1,6 @@
-if SHIELD_ZARUBALL_RIGHT
+#No whitespace after the comma or in your part name!
+config SHIELD_ZARUBALL_LEFT
+	def_bool $(shields_list_contains,ZaruBall_left)
 
-# 右側＝セントラル & トラックボールあり
-
-config ZMK_KEYBOARD_NAME
-    default "ZaruBall"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-# トラックボール(PMW3610)を使うのでポインティング関係を有効化
-config ZMK_POINTING
-    default y
-
-config PMW3610
-    default y
-
-config INPUT
-    default y
-
-endif  # SHIELD_ZARUBALL_RIGHT
-
-
-if SHIELD_ZARUBALL_LEFT
-
-# 左側＝エンコーダのみ（トラックボールなし）
-
-# EC11 エンコーダドライバを有効化
-config EC11
-    default y
-
-config EC11_TRIGGER_GLOBAL_THREAD
-    default y
-
-endif  # SHIELD_ZARUBALL_LEFT
-
-
-# 共通：左右どちらか片方でも使うなら SPLIT を有効化
-if SHIELD_ZARUBALL_LEFT || SHIELD_ZARUBALL_RIGHT
-
-config ZMK_SPLIT
-    default y
-
-endif
+config SHIELD_ZARUBALL_RIGHT
+	def_bool $(shields_list_contains,ZaruBall_right)
