@@ -132,9 +132,13 @@
 / {
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <24>;
+         // ★A/Bを入れ替え
+        a-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+
+        // 感度は今のまま使いたければ 24 のままでOK
+        // 落ち着かせたいなら 80/20 にする手もあり
+        steps = <48>;
         status = "okay";
     };
 };
