@@ -132,7 +132,7 @@
 / {
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-         // ★A/Bを入れ替え
+        // ★A/Bを入れ替え
         a-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 
@@ -143,17 +143,18 @@
     };
 };
 
-//sensor
+/* --- v0.1.0 では存在しない zmk,keymap-sensors を一旦無効化 ---
 / {
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
-   
         triggers-per-rotation = <20>;
     };
 };
+--- ここまで無効化 --- */
 
 
+/* --- v0.1.0 では trackball / input-listener / SPI 設定は未対応なので一旦無効化 ---
 //trackball
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
@@ -204,8 +205,9 @@
 
 / {
     trackball_listener: trackball_listener {
-    compatible = "zmk,input-listener";
-    status = "disabled";
-    device = <&trackball>;
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball>;
     };
 };
+--- ここまで無効化 --- */
