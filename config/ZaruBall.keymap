@@ -232,7 +232,7 @@
         // Extra layer can be added in ZMK STUDIO
 
         Extra1 {
-:            label = "Extra1";
+            label = "Extra1";
             sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
             bindings = <
 &trans  &trans  &trans                    &trans  &trans            &trans                                   &trans              &trans                 &trans           &trans    &trans     &trans
