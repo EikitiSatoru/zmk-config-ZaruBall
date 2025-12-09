@@ -15,6 +15,7 @@
 #define SCROLL 1
 
 // スクロール量の設定
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 / {
@@ -27,13 +28,16 @@
         };
     };
 };
+
 / {
     behaviors {
-       // スクロール用のbehaviorの設定
+        // スクロール用のbehaviorの設定
+
         scroll_down_up: behavior_sensor_rotate_mouse_wheel_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>; // スクロールのタップ時間
         };
 
@@ -171,14 +175,14 @@
 
         base_layer {
             display-name = "Base";
-            sensor-bindings = <&scroll_down_up>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
             bindings = <
 &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp N5                         &kp NUMBER_6  &kp N7  &kp N8  &kp N9     &kp N0   &td2
 &kp ESCAPE        &kp Q         &kp W         &kp E         &kp R             &kp T                          &kp Y         &kp U   &kp I   &kp O      &kp P    &kp MINUS
 &kp TAB           &kp A         &kp S         &kp D         &kp F             &kp G        &gui_tab          &out OUT_TOG  &kp H   &kp J   &kp K      &kp L    &mt LEFT_SHIFT APOS  &kp ENTER
 &kp LSHFT         &kp Z         &kp X         &kp C         &kp V             &kp B        &kp BACKSPACE     &kp DELETE    &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH             &kp LEFT_SHIFT
 &kp LEFT_CONTROL                &kp LEFT_GUI  &kp LEFT_ALT  &lt 1 LANGUAGE_2  &lt 2 SPACE  &lt 5 LANGUAGE_1  &td3          &td4                                &kp RIGHT_CONTROL
-            >;          
+            >;
         };
 
         lower_layer {
@@ -190,7 +194,7 @@
 &kp LC(TAB)     &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4      &kp N5            &kp PAGE_DOWN       &kp PAGE_UP       &kp NUMBER_6       &kp N7         &kp N8             &kp N9                &mt LEFT_CONTROL N0  &mt LEFT_SHIFT SEMI
 &kp LEFT_SHIFT  &kp LC(Z)         &kp LC(X)         &kp LC(C)         &kp LC(V)         &kp LG(V)         &kp DOWN            &kp UP_ARROW      &kp RIGHT_BRACKET  &kp BACKSLASH  &kp LS(LESS_THAN)  &kp LS(GREATER_THAN)  &kp LS(INT_RO)       &mt LEFT_SHIFT INTERNATIONAL_1
 &kp LC(LG(F4))                    &kp LC(LG(D))     &kp LG(TAB)       &trans            &lt 1 INT_HENKAN  &lt 1 INT_MUHENKAN  &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))                                                          &kp RIGHT_CONTROL
-            >;           
+            >;
         };
 
         raise_layer {
@@ -202,7 +206,7 @@
 &trans      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp LS(LC(END))   &none             &kp TAB          &kp DOUBLE_QUOTES  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LEFT_SHIFT    &kp ENTER
 &trans      &none  &none           &kp PAGE_DOWN   &kp LG(C)         &none             &gui_down_arrow   &gui_up_arrow    &kp SLASH          &kp NUMBER_0  &kp COMMA     &kp DOT       &kp LEFT_CONTROL  &none
 &kp LG(F4)         &kp LG(D)       &lt 2 LG(HOME)  &trans            &lt 2 SPACE       &lt 2 LANGUAGE_1  &gui_left_arrow  &gui_right_arrow                                             &kp RCTRL
-            >;            
+            >;
         };
 
         adjust_layer {
@@ -214,7 +218,7 @@
 &trans          &none  &none  &none   &none   &none   &none   &ind_bat       &none          &none          &none          &none          &none           &none
 &trans          &none  &none  &none   &none   &none   &none   &ind_con       &none          &none          &none          &none          &none           &bt BT_CLR
 &studio_unlock         &none  &trans  &trans  &trans  &trans  &bt BT_PRV     &bt BT_NXT                                                  &bt BT_CLR_ALL
-            >;            
+            >;
         };
 
         mouse_layer {
@@ -241,7 +245,6 @@
 &trans  &trans  &trans                    &trans  &trans            &trans              &lt 5 LG(PAGE_DOWN)  &lt 5 LG(PAGE_UP)   &trans                 &trans           &trans    &trans     &trans  &trans
 &trans          &kp LS(LG(LEFT_BRACKET))  &trans  &lt 5 LANGUAGE_2  &lt 5 SPACE         &lt 5 LANGUAGE_1     &lt 5 LS(LG(LEFT))  &lt 5 LS(LG(RIGHT))                                          &trans
             >;
-
         };
 
         layer_6 {
