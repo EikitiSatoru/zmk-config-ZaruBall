@@ -132,8 +132,12 @@
 / {
     left_encoder: encoder_left {
         compatible = "alps,ec11";
+         // ★A/Bを入れ替え
         a-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+
+        // 感度は今のまま使いたければ 24 のままでOK
+        // 落ち着かせたいなら 80/20 にする手もあり
         steps = <80>;
         status = "okay";
     };
@@ -144,6 +148,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
+   
         triggers-per-rotation = <20>;
     };
 };
@@ -199,8 +204,8 @@
 
 / {
     trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&trackball>;
+    compatible = "zmk,input-listener";
+    status = "disabled";
+    device = <&trackball>;
     };
 };
