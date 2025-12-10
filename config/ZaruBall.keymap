@@ -27,7 +27,7 @@
             then-layer = <3>;
         };
     };
-}; /*
+}; */
 
 / {
     behaviors {
