@@ -18,7 +18,7 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-/ {
+/* {
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -27,7 +27,7 @@
             then-layer = <3>;
         };
     };
-};
+}; /*
 
 / {
     behaviors {
