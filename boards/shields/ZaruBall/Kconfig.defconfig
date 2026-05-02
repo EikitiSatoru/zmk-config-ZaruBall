@@ -2,7 +2,7 @@ if SHIELD_ZARUBALL_RIGHT #ここを変えてセントラル側に問題のコー
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "ZaruBall"
+    default "ZaruBallv2"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
